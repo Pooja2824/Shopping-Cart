@@ -42,7 +42,7 @@ class Products extends React.Component {
         <div>
           {this.getFilteredProducts().length > 0 ? (
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <Table striped bordered hover variant='dark' style={{ width: '600px' }}>
+              <Table bordered variant='dark' style={{ width: '600px' }}>
                 <thead>
                   <tr>
                     <th>#</th>
@@ -51,7 +51,7 @@ class Products extends React.Component {
                     <th></th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody style={{ verticalAlign: 'middle' }}>
                   {this.getFilteredProducts().map((product, index) => (
                     <tr>
                       <td style={{ width: '50px' }}>{index + 1}</td>
@@ -62,7 +62,7 @@ class Products extends React.Component {
                         </Figure>
                       </td>
                       <td style={{ width: '50px' }}>Rs{product.cost}</td>
-                      <td style={{ width: '100px' }}>
+                      <td style={{ width: '100px', verticalAlign: 'middle' }}>
                         <Button onClick={() => this.props.addToCart(product)}>Add to Cart</Button>
                       </td>
                     </tr>
