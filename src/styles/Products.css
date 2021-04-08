@@ -1,0 +1,33 @@
+.filterLabel {
+  margin-right: 15px;
+}
+
+.filter {
+  background: cadetblue;
+}
+
+.filterMenu {
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 25px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.searchBar {
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 25px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.messageContainer {
+  margin-top: 50px;
+  font-weight: bolder;
+  text-align: center;
+  text-decoration: crimson;
+  word-wrap: normal;
+}
