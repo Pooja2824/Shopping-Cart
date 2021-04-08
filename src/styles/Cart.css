@@ -12,7 +12,14 @@
 }
 
 .priceContainer {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background: cadetblue;
+  display: flex;
+  flex-flow: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background-color: burlywood;
+  width: fit-content;
+}
+
+.dummyContainer {
+  width: 80%;
 }

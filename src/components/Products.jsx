@@ -21,7 +21,6 @@ class Products extends React.Component {
   render() {
     return (
       <div>
-        <h1>E-Shoppe</h1>
         <div className='filter'>
           <span className='filterLabel'>Select category</span>
           <select className='filterMenu' onChange={e => this.props.changeFilter(e.target.value)}>
@@ -41,34 +40,68 @@ class Products extends React.Component {
         </div>
         <div>
           {this.getFilteredProducts().length > 0 ? (
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <Table bordered variant='dark' style={{ width: '600px' }}>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody style={{ verticalAlign: 'middle' }}>
-                  {this.getFilteredProducts().map((product, index) => (
-                    <tr>
-                      <td style={{ width: '50px' }}>{index + 1}</td>
-                      <td style={{ width: '200px' }}>
-                        <Figure>
-                          <Figure.Image width={171} height={180} alt='171x180' src={product.image} />
-                          <Figure.Caption style={{ color: 'white' }}>{product.name}</Figure.Caption>
-                        </Figure>
-                      </td>
-                      <td style={{ width: '50px' }}>Rs{product.cost}</td>
-                      <td style={{ width: '100px', verticalAlign: 'middle' }}>
+            <div style={{ display: 'flex', flexFlow: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              {this.getFilteredProducts().map((product, index) => (
+                <React.Fragment>
+                  <div
+                    style={{
+                      width: '80%',
+                      display: 'flex',
+                      flexFlow: 'row',
+                      justifyContent: 'center',
+                      marginTop: '20px'
+                    }}
+                  >
+                    <div style={{ width: '25%' }}>
+                      <Figure>
+                        <Figure.Image width={171} height={180} alt='171x180' src={product.image} />
+                      </Figure>
+                    </div>
+                    <div
+                      style={{
+                        width: '75%',
+                        display: 'flex',
+                        flexFlow: 'column',
+                        marginLeft: '50px',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: '100%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          fontWeight: 'bold',
+                          fontFamily: 'serif',
+                          fontSize: '20px'
+                        }}
+                      >
+                        {product.name}
+                      </div>
+                      <div
+                        style={{
+                          width: '100%',
+                          display: 'flex',
+                          fontWeight: 'normal',
+                          fontFamily: 'monospace',
+                          fontSize: '20px'
+                        }}
+                      >
+                        {product.category}
+                      </div>
+                      <div style={{ width: '100%', display: 'flex' }}>Rs.{product.cost}</div>
+                      <div style={{ display: 'flex', justifyContent: 'flex-start', fontSize: '14px' }}>
+                        <p>{product.description}</p>
+                      </div>
+                      <div style={{ marginBottom: '20px', marginTop: '20px' }}>
                         <Button onClick={() => this.props.addToCart(product)}>Add to Cart</Button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </Table>
+                      </div>
+                    </div>
+                  </div>
+                  {index !== 1 ? <div style={{ border: '1px solid', width: '80%' }} /> : null}
+                </React.Fragment>
+              ))}
             </div>
           ) : (
             <div className='messageContainer'>

@@ -90,22 +90,29 @@ class App extends React.Component {
       <div className='App'>
         <div className='appHeader'>
           <header>
-            <button
-              className='cartButton'
-              onClick={() => {
-                this.navigate('Cart');
-              }}
-            >
-              Cart({this.getCartQuantity()})
-            </button>
-            <button
-              className='productsButton'
-              onClick={() => {
-                this.navigate('Products');
-              }}
-            >
-              Home
-            </button>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <div style={{ justifyContent: 'flex-start', color: 'white' }}>
+                <h1>E-Shoppe</h1>
+              </div>
+              <div style={{ justifyContent: 'flex-end', alignItems: 'center' }}>
+                <button
+                  className='cartButton'
+                  onClick={() => {
+                    this.navigate('Cart');
+                  }}
+                >
+                  Cart({this.getCartQuantity()})
+                </button>
+                <button
+                  className='productsButton'
+                  onClick={() => {
+                    this.navigate('Products');
+                  }}
+                >
+                  Home
+                </button>
+              </div>
+            </div>
           </header>
         </div>
         {this.state.pageName === 'Products' ? (
