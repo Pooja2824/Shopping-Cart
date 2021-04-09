@@ -12,7 +12,7 @@ class App extends React.Component {
       pageName: 'Products',
       products: productsData.products,
       cart: [],
-      category: 'Electronics',
+      category: 'All',
       searchTerm: ''
     };
     this.addToCart = this.addToCart.bind(this);
@@ -44,7 +44,6 @@ class App extends React.Component {
 
   // remove all items from cart
   clearCart() {
-    console.log('All removed');
     this.setState(state => ({
       cart: []
     }));
